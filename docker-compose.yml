@@ -1,13 +1,14 @@
 version: "3.9"
+
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8.0
     container_name: mysql_container
     environment:
-      MYSQL_ROOT_PASSWORD: your_root_password
-      MYSQL_DATABASE: your_database_name
-      MYSQL_USER: your_user
-      MYSQL_PASSWORD: your_user_password
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypass123
     ports:
       - "3306:3306"
     volumes:
@@ -15,4 +16,4 @@ services:
     restart: always
 
 volumes:
-  mysql_data
+  mysql_data:
