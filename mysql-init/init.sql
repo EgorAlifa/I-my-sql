@@ -1,5 +1,8 @@
 USE testdb;
 
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
 -- Таблица персонала с русскими полями
 CREATE TABLE IF NOT EXISTS personal (
     id INT AUTO_INCREMENT PRIMARY KEY,
