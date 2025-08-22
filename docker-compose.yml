@@ -1,5 +1,4 @@
 version: "3.9"
-
 services:
   mysql:
     image: mysql:8.0
@@ -16,8 +15,8 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d  # ← Добавьте эту строку
     restart: always
-
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
@@ -31,6 +30,5 @@ services:
     depends_on:
       - mysql
     restart: always
-
 volumes:
   mysql_data:
